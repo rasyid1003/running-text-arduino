@@ -47,11 +47,6 @@ void loop(){
 
 Follow Saya Di Instagram ❤️[Faris_Rasyid❤️](https://www.instagram.com/_farisrasyid_/)
 
-
-## Lihat Demo
-
-👉[LIHAT DEMO👈](https://rasyid1003.github.io/undangan_web/) Jangan Lupa Star⭐ nya Untuk Support Github Ini🤩
-
 ## License
 
 Copyright (c) [2022] [Faris Rasyid]
