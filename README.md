@@ -4,11 +4,43 @@
 - [Faris Rasyid](http://farisrasyid.my.id)
 
 
-# Undangan Digital Pesanan Orng
-
+## Diagram
 Codingan Yg Berfungsi Untuk Membuat Running Text Sederhana Dengan Board Arduino
-![Gambar](https://cdn.discordapp.com/attachments/1041961141594759178/1044647861272465468/image.png)
 ![image](https://user-images.githubusercontent.com/85282829/207043395-fa96f813-8adf-47fc-b796-c799b72568d0.png)
+## Codingan
+
+#include <LiquidCrystal_I2C.h>
+
+int totalColumns = 16;
+int totalRows = 2;
+
+LiquidCrystal_I2C lcd(0x27, totalColumns, totalRows);  
+
+String staticMessage = "Faris Rasyid";
+String scrollingMessage = "Selamat Datang.";
+
+void scrollMessage(int row, String message, int delayTime, int totalColumns) {
+  for (int i=0; i < totalColumns; i++) {
+    message = " " + message;  
+  } 
+  message = message + " "; 
+  for (int position = 0; position < message.length(); position++) {
+    lcd.setCursor(0, row);
+    lcd.print(message.substring(position, position + totalColumns));
+    delay(delayTime);
+  }
+}
+
+void setup(){
+  lcd.init();                    
+  lcd.backlight();
+}
+
+void loop(){
+  lcd.setCursor(0, 0);
+  lcd.print(staticMessage);
+  scrollMessage(1, scrollingMessage, 250, totalColumns);
+}
 
 
 ## Feedback
